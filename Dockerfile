@@ -3,10 +3,8 @@ FROM golang:1.25-alpine
 
 WORKDIR /app
 
-# (optional) let Go fetch the right minor toolchain automatically
 ENV GOTOOLCHAIN=auto
 
-# Cache deps
 COPY go.mod go.sum ./
 RUN go mod download
 
